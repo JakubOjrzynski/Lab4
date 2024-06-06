@@ -19,3 +19,10 @@ if [[ "$1" == "--logs" && -n "$2" ]]; then
     done
 fi
 
+if [[ "$1" == "--help" ]]; then
+    echo "--date: wyswietlenie daty"
+    echo "--logs [n]: utworzenie n plikow (bez parametru 100)"
+    echo "--help: pomoc"
+fi
+
+
