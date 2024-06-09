@@ -16,6 +16,8 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "--date, -d: wyswietlenie daty"
     echo "--logs, -l [n]: utworzenie n plikow (bez parametru 100)"
     echo "--help, -h: pomoc"
+    echo "--init: klonowanie repozytorium"
+    echo "--error, -e [n]: utworzenie n errorow (domyslnie 100)"
 fi
 
 
