@@ -23,7 +23,7 @@ fi
 if [[ "$1" == "--init" ]]; then
     repo_url="https://github.com/JakubOjrzynski/Lab4"
     current_dir=$(pwd)
-    git clone "$repo_url" "current_dir/repository"
+    git clone "$repo_url" "$current_dir/repository"
     export PATH=$PATH:"$current_dir/repository"
 fi
 
