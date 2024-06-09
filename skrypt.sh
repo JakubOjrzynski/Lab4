@@ -1,28 +1,23 @@
 #!/bin/bash
 
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
     date
 fi
 
-if [[ "$1" == "--logs" && -z "$2" ]]; then
-    for i in {1..100}; do
-        echo "Numer pliku $i" > "logx$i.txt"
-        echo "stworzone przez $(whoami) w dniu $(date)" >> "logx$i.txt"
-    done
-fi
-
-if [[ "$1" == "--logs" && -n "$2" ]]; then
-    num_files=$2
+if [[ "$1" == "--logs" || "$1" == "-l" ]]; then
+    num_files=${2:-100}
     for i in $(seq 1 $num_files); do
         echo "numer pliku $i" > "logx$i.txt"
         echo "stworzony przez $(whoami) w dniu $(date)" >> "logx$i.txt"
     done
 fi
 
-if [[ "$1" == "--help" ]]; then
-    echo "--date: wyswietlenie daty"
-    echo "--logs [n]: utworzenie n plikow (bez parametru 100)"
-    echo "--help: pomoc"
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "--date, -d: wyswietlenie daty"
+    echo "--logs, -l [n]: utworzenie n plikow (bez parametru 100)"
+    echo "--help, -h: pomoc"
+    echo "--init: klonowanie repozytorium"
+    echo "--error, -e [n]: utworzenie n errorow (domyslnie 100)"
 fi
 
 if [[ "$1" == "--init" ]]; then
